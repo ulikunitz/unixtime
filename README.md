@@ -8,18 +8,14 @@ Ian Lance Taylor suggested to create such a passage in the discussion of
 Go issue [#27782](https://github.com/golang/go/issues/27782). The
 package should be used to measure, whether there is really a need for
 this functionality that would justify the inclusion in the standard
-library.
-
-In my opinion such easy to implement functionality should not be part of
-the standard library or justifies the provision of its own package.
-Regard this package as an experiment to measure the actual demand for
-it.
+library. Not that the issue was a duplicate of
+[#18935](https://github.com/golang/go/issues/18935).
 
 ## Installing the package
 
 Use the get get command to download the module.
 
-```
+```bash
 $ go get -u github.com/ulikunitz/unixtime
 ```
 
@@ -27,29 +23,29 @@ $ go get -u github.com/ulikunitz/unixtime
 
 ```go
 import (
-	"fmt"
-	"log"
-	"time"
+        "fmt"
+        "log"
+        "time"
 
-	"github.com/ulikunitz/unixtime"
+        "github.com/ulikunitz/unixtime"
 )
 
 func Example() {
-	t, err := time.Parse(time.RFC3339Nano, "1961-04-12T09:06:59.7+03:00")
-	if err != nil {
-		log.Fatalf("Parse error %s", err)
-	}
+        t, err := time.Parse(time.RFC3339Nano, "1961-04-12T09:06:59.7+03:00")
+        if err != nil {
+                log.Fatalf("Parse error %s", err)
+        }
 
-	ms := unixtime.Milli(t)
-	fmt.Printf("Unix time: %d ms\n", ms)
+        ms := unixtime.Milli(t)
+        fmt.Printf("Unix time: %d ms\n", ms)
 
-	tms := unixtime.FromMilli(ms)
-	fmt.Printf("FromMilli: %s\n", tms.Format(time.RFC3339Nano))
+        tms := unixtime.FromMilli(ms)
+        fmt.Printf("FromMilli: %s\n", tms.Format(time.RFC3339Nano))
 
-	µs := unixtime.Micro(t)
-	fmt.Printf("Unix time: %d µs\n", µs)
+        µs := unixtime.Micro(t)
+        fmt.Printf("Unix time: %d µs\n", µs)
 
-	tµs := unixtime.FromMicro(µs)
-	fmt.Printf("FromMicro: %s\n", tµs.Format(time.RFC3339Nano))
+        tµs := unixtime.FromMicro(µs)
+        fmt.Printf("FromMicro: %s\n", tµs.Format(time.RFC3339Nano))
 }
 ```
