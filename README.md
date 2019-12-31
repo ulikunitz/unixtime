@@ -4,7 +4,7 @@ This package has been created to provide functions to convert between Go
 time values and integers representing the Unix time in micro- or
 milliseconds.
 
-Ian Lance Taylor suggested to create such a passage in the discussion of
+Ian Lance Taylor suggested to create such a package in the discussion of
 Go issue [#27782](https://github.com/golang/go/issues/27782). The
 package should be used to measure, whether there is really a need for
 this functionality that would justify the inclusion in the standard
