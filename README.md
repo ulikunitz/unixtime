@@ -8,7 +8,7 @@ Ian Lance Taylor suggested to create such a package in the discussion of
 Go issue [#27782](https://github.com/golang/go/issues/27782). The
 package should be used to measure, whether there is really a need for
 this functionality that would justify the inclusion in the standard
-library. Not that the issue was a duplicate of
+library. Note that the issue was a duplicate of
 [#18935](https://github.com/golang/go/issues/18935).
 
 ## Installing the package
